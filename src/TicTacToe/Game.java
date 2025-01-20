@@ -42,6 +42,12 @@ public class Game {
     public boolean makeMove(int row, int col) {
         if (board[row][col] == ' ') {
             board[row][col] = currentPlayer;
+            if (checkWin()) {
+                updateScore();
+            } else if (checkDraw()) {
+            } else {
+                switchPlayer();
+            }
             return true;
         }
         return false;
