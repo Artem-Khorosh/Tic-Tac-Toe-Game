@@ -5,28 +5,28 @@
 - Режим игры против компьютера.
 - Подсчет очков для каждого игрока.
 - Возможность сброса игры и начала новой.
+- Соответствие принципам SOLID.
+- Наличие unit-тестов для проверки логики игры.
 
 ## Требования
 - Java Development Kit (JDK) 8 или выше.
 - Любая среда разработки (например, IntelliJ IDEA, Eclipse) или командная строка.
+- JUnit 5 для запуска тестов
 
 ## Установка и запуск
 1. Склонируйте репозиторий или загрузите исходный код.
    ```bash
-   git clone https://github.com/ваш-репозиторий/TicTacToe.git
+   git clone https://github.com/Artem-Khorosh/Tic-Tac-Toe-Game
 Перейдите в директорию проекта:
-
-bash
-Copy
 cd TicTacToe
+
 Скомпилируйте и запустите проект:
 
 С использованием командной строки:
 
-bash
-Copy
 javac TicTacToe/GameUI.java
 java TicTacToe.GameUI
+
 С использованием IDE:
 
 Откройте проект в вашей среде разработки.
@@ -60,3 +60,15 @@ HumanPlayer.java: Класс для игрока-человека.
 ComputerPlayer.java: Класс для игрока-компьютера.
 
 GameFactory.java: Фабрика для создания игроков.
+
+GameTest.java: Unit-тесты для проверки логики игры.
+
+Тесты
+Проект включает unit-тесты для проверки основных функций игры. Тесты написаны с использованием JUnit 5.
+
+Запуск тестов
+
+Запустите тесты через IDE или командную строку:
+
+javac -cp .:junit-platform-console-standalone-1.7.0.jar TicTacToe/GameTest.java
+java -jar junit-platform-console-standalone-1.7.0.jar --class-path . --scan-class-path
